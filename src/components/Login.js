@@ -22,20 +22,30 @@ export const Login = () => {
         });
     }
 
+    const fazerCadastro = () => {
+        console.log('cadastrar')
+    }
+
     return (
         <section className='loginContainerBg'>
             <div className='loginContainer'>
                 <h1>Faça o seu login:</h1>
+
                 <div>
                     <label htmlFor='usuario'>Usuário</label>
                     <input className='loginInput' type="email" id='usuario' placeholder='Digite o usuário.' value={usuario} onChange={(event) => setUsuario(event.target.value)} />
                     {usuarioInvalidado ? <span style={{ color: 'red' }}>Usuário ou senha inválido.</span> : ''}
+                </div>
+
+                <div>
                     <label htmlFor='senha'>Senha</label>
                     <input className='loginInput' type="password" id='senha' placeholder='Digite sua senha.' value={senha} onChange={(event) => setSenha(event.target.value)} />
                     {senhaInvalidada ? <span style={{ color: 'red' }}>Usuário ou senha inválido.</span> : ''}
                 </div>
+
                 <div className='loginButton'>
                     <button onClick={() => fazerLogin()}>Entrar</button>
+                    <button onClick={() => fazerCadastro()}>Cadastrar</button>
                 </div>
             </div>
         </section>
