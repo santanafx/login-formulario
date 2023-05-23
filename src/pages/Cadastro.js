@@ -19,7 +19,7 @@ export const Cadastro = () => {
 
                 <div>
                     <label htmlFor='cadastroUsuario'>Usuário</label>
-                    <input className='loginInput' type="email" id='cadastroUsuario' placeholder='Digite o usuário.' value={cadastroUsuario} onChange={(event) => setCadastroUsuario(event.target.value)} />
+                    <input className='loginInput' type="email" id='cadastroUsuario' placeholder='Digite o seu email.' value={cadastroUsuario} onChange={(event) => setCadastroUsuario(event.target.value)} />
 
                 </div>
 

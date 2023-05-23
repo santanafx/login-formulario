@@ -6,21 +6,41 @@ import { useNavigate } from 'react-router-dom';
 export const Login = () => {
     const navigate = useNavigate();
 
-    const { dataBase } = React.useContext(Context);
+    const { dataBase, setAutenticar } = React.useContext(Context);
     const [usuario, setUsuario] = React.useState('');
     const [usuarioInvalidado, setUsuarioInvalidado] = React.useState('');
     const [senha, setSenha] = React.useState('');
     const [senhaInvalidada, setSenhaInvalidada] = React.useState('');
+    const [senhaComprimentoMinimoInvalido, setSenhaComprimentoMinimoInvalido] = React.useState('');
+    const [senhaComprimentoMaximoInvalido, setSenhaComprimentoMaximoInvalido] = React.useState('');
 
     const fazerLogin = () => {
+        if (senha.length < 6) {
+            setSenhaComprimentoMinimoInvalido(true);
+        }
+
+        if (senha.length > 9) {
+            setSenhaComprimentoMaximoInvalido(true);
+        }
+
         dataBase.forEach(element => {
-            if (element.usuario === usuario && element.senha === senha) {
-                setUsuarioInvalidado(false)
-                setSenhaInvalidada(false)
+            if (element.usuario === usuario) {
+                setUsuarioInvalidado(false);
             } else {
-                setUsuarioInvalidado(true)
-                setSenhaInvalidada(true)
+                setUsuarioInvalidado(true);
             }
+
+            if (element.senha === senha) {
+                setSenhaInvalidada(false);
+            } else {
+                setSenhaInvalidada(true);
+            }
+
+            if (element.usuario === usuario && element.senha === senha) {
+                setAutenticar(true);
+                navigate('/usuario');
+            }
+
         });
     }
 
@@ -35,14 +55,16 @@ export const Login = () => {
 
                 <div>
                     <label htmlFor='usuario'>Usuário</label>
-                    <input className='loginInput' type="email" id='usuario' placeholder='Digite o usuário.' value={usuario} onChange={(event) => setUsuario(event.target.value)} />
-                    {usuarioInvalidado ? <span style={{ color: 'red' }}>Usuário ou senha inválido.</span> : ''}
+                    <input className='loginInput' type="email" id='usuario' placeholder='Digite o seu email.' value={usuario} onChange={(event) => { setUsuario(event.target.value); setUsuarioInvalidado(false) }} />
+                    {usuarioInvalidado ? <span style={{ color: 'red' }}>Usuário inválido, por favor digite seu email.</span> : ''}
                 </div>
 
                 <div>
                     <label htmlFor='senha'>Senha</label>
-                    <input className='loginInput' type="password" id='senha' placeholder='Digite sua senha.' value={senha} onChange={(event) => setSenha(event.target.value)} />
-                    {senhaInvalidada ? <span style={{ color: 'red' }}>Usuário ou senha inválido.</span> : ''}
+                    <input className='loginInput' type="password" id='senha' placeholder='Digite sua senha.' value={senha} onChange={(event) => { setSenha(event.target.value); setSenhaInvalidada(false); setSenhaComprimentoMinimoInvalido(false); setSenhaComprimentoMaximoInvalido(false) }} />
+                    {senhaInvalidada ? <span style={{ color: 'red' }}>Senha inválida.</span> : ''}
+                    {senhaComprimentoMinimoInvalido ? <span style={{ color: 'red' }}>Sua senha precisa ter no mínimo 6 caracteres.</span> : ''}
+                    {senhaComprimentoMaximoInvalido ? <span style={{ color: 'red' }}>Sua senha pode ter no máximo 9 caracteres.</span> : ''}
                 </div>
 
                 <div className='loginButton'>
