@@ -1,8 +1,10 @@
 import React from 'react'
 import './Login.css'
 import { Context } from '../context/globalContext';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
+    const navigate = useNavigate();
 
     const { dataBase } = React.useContext(Context);
     const [usuario, setUsuario] = React.useState('');
@@ -23,7 +25,7 @@ export const Login = () => {
     }
 
     const fazerCadastro = () => {
-        console.log('cadastrar')
+        navigate('/cadastro');
     }
 
     return (
