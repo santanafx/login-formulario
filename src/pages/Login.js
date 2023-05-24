@@ -13,6 +13,7 @@ export const Login = () => {
     const [senhaInvalidada, setSenhaInvalidada] = React.useState('');
     const [senhaComprimentoMinimoInvalido, setSenhaComprimentoMinimoInvalido] = React.useState('');
     const [senhaComprimentoMaximoInvalido, setSenhaComprimentoMaximoInvalido] = React.useState('');
+    const [usuarioNaoCadastrado, setUsuarioNaoCadastrado] = React.useState('');
 
     const fazerLogin = () => {
         if (senha.length < 6) {
@@ -39,6 +40,8 @@ export const Login = () => {
             if (element.usuario === usuario && element.senha === senha) {
                 setAutenticar(true);
                 navigate('/usuario');
+            } else {
+                setUsuarioNaoCadastrado(true);
             }
 
         });
@@ -57,6 +60,7 @@ export const Login = () => {
                     <label htmlFor='usuario'>Usuário</label>
                     <input className='loginInput' type="email" id='usuario' placeholder='Digite o seu email.' value={usuario} onChange={(event) => { setUsuario(event.target.value); setUsuarioInvalidado(false) }} />
                     {usuarioInvalidado ? <span style={{ color: 'red' }}>Usuário inválido, por favor digite seu email.</span> : ''}
+                    {usuarioNaoCadastrado ? <span style={{ color: 'red' }}>Usuário não é cadastrado.</span> : ''}
 
                 </div>
 

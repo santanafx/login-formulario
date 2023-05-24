@@ -6,6 +6,7 @@ import { Cadastro } from './pages/Cadastro';
 import { Context } from './context/globalContext';
 import { Usuario } from './pages/Usuario';
 import { NotFound } from './pages/NotFound';
+import { NavBar } from './components/NavBar';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
+        <NavBar />
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/cadastro' element={<Cadastro />} />

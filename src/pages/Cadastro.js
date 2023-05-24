@@ -32,53 +32,45 @@ export const Cadastro = () => {
 
         if (cadastroSenha.length < 6) {
             setCadastroSenhaCompMinInv(true);
-            console.log('erro-1')
+
         } else {
             setCadastroSenhaCompMinInv(false);
-            console.log('erro0')
+
         }
 
         if (cadastroSenha.length > 9) {
             setCadastroSenhaCompMaxInv(true);
-            console.log('erro1')
+
         } else {
             setCadastroSenhaCompMaxInv(false);
-            console.log('erro2')
+
         }
 
         if (cadastroUsuario.includes('@') && cadastroUsuario.includes('.com')) {
             setValidaEmail(false);
-            console.log('erro3')
         } else {
             setValidaEmail(true);
-            console.log('erro4')
+
         }
 
         if (repetirCadastroSenha === cadastroSenha) {
             setCadastroSenhaInvalida(false);
-            console.log('erro7')
 
         } else {
             setCadastroSenhaInvalida(true)
-            console.log('erro8')
 
         }
 
         let usuarioEncontrado = false;
 
         dataBase.forEach((element) => {
-            console.log(element.usuario)
             if (element.usuario === cadastroUsuario) {
                 setUsuarioCadastrado(true);
-                console.log('achou')
-                console.log(usuarioCadastrado);
                 usuarioEncontrado = true;
             }
         })
 
         if (cadastroSenhaInvalida === false && usuarioEncontrado === false && cadastroSenhaCompMinInv === false && cadastroSenhaCompMaxInv === false && validaEmail === false) {
-            console.log('novo')
-
             setDataBase([...dataBase, novaData]);
         }
 

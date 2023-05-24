@@ -1,0 +1,43 @@
+.navBarContainerBg {
+    height: 100px;
+    background-color: var(--azul);
+    display: flex;
+    align-items: center;
+
+}
+
+.navBarContainer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.navBarLogin {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+    text-decoration: none;
+    color: var(--preto);
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.navBarLogin:hover {
+    color: var(--branco);
+}
+
+.navBarContainer a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: var(--preto);
+    font-size: 1.5rem;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.navBarContainer a:hover {
+    color: var(--branco);
+}

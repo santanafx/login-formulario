@@ -5,7 +5,7 @@ export const Context = React.createContext();
 export const ContextProvider = ({ children }) => {
     const [autenticar, setAutenticar] = React.useState(false);
 
-    const [dataBase, setDataBase] = React.useState([
+    const [dataBase, setDataBase] = React.useState([{}
 
     ])
 
