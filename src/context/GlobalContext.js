@@ -5,12 +5,18 @@ export const Context = React.createContext();
 export const ContextProvider = ({ children }) => {
     const [autenticar, setAutenticar] = React.useState(false);
 
-    const dataBase = [
+    var dataBase = [
         {
-            id: 0,
+            id: 1,
             usuario: 'santanafx@hotmail.com',
             senha: '123456',
         },
+        {
+            id: 2,
+            usuario: 'rafaelfx@hotmail.com',
+            senha: '123456',
+        },
+
     ]
 
     return (

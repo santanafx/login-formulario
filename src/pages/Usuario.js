@@ -1,7 +1,20 @@
 import React from 'react'
+import { Context } from '../context/globalContext'
+import { useNavigate } from 'react-router-dom';
 
 export const Usuario = () => {
+
+    const { setAutenticar, autenticar } = React.useContext(Context);
+    const navigate = useNavigate();
+
+    const deslogar = () => {
+        setAutenticar(false);
+        navigate('/');
+    }
+
     return (
-        <div>Usuario</div>
+        <div>
+            <button onClick={() => deslogar()}>Deslogar</button>
+        </div>
     )
 }
