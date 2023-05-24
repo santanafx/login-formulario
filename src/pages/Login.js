@@ -57,6 +57,7 @@ export const Login = () => {
                     <label htmlFor='usuario'>Usuário</label>
                     <input className='loginInput' type="email" id='usuario' placeholder='Digite o seu email.' value={usuario} onChange={(event) => { setUsuario(event.target.value); setUsuarioInvalidado(false) }} />
                     {usuarioInvalidado ? <span style={{ color: 'red' }}>Usuário inválido, por favor digite seu email.</span> : ''}
+
                 </div>
 
                 <div>
