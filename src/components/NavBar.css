@@ -1,9 +1,8 @@
 .navBarContainerBg {
-    height: 100px;
     background-color: var(--azul);
     display: flex;
     align-items: center;
-
+    height: 100px;
 }
 
 .navBarContainer {

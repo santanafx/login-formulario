@@ -8,6 +8,7 @@ import { Usuario } from './pages/Usuario';
 import { NotFound } from './pages/NotFound';
 import { NavBar } from './components/NavBar';
 import { Sobre } from './pages/Sobre';
+import { Footer } from './components/Footer';
 
 function App() {
 
@@ -16,14 +17,17 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<Login />} />
-          <Route path='/cadastro' element={<Cadastro />} />
-          <Route path='/sobre' element={<Sobre />} />
-          {autenticar ? <Route path='/usuario' element={<Usuario />} /> : ''}
-          <Route path='*' element={<NotFound />} />
-        </Routes>
+        <NavBar className='appNavBar' />
+        <div className="appBody">
+          <Routes>
+            <Route path='/' element={<Login />} />
+            <Route path='/cadastro' element={<Cadastro />} />
+            <Route path='/sobre' element={<Sobre />} />
+            {autenticar ? <Route path='/usuario' element={<Usuario />} /> : ''}
+            <Route path='*' element={<NotFound />} />
+          </Routes>
+        </div>
+        <Footer className="appFooter" />
       </BrowserRouter>
     </>
   );

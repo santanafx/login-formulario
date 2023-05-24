@@ -1,0 +1,80 @@
+.footerContainerBg {
+    background-color: var(--azul);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.footerContainer p {
+    font-weight: bolder;
+}
+
+.footerContainer span {
+    margin: 5px 0;
+}
+
+.footerIcons {
+    margin: 10px 0;
+    padding: 8px;
+    border-radius: 20px;
+    background-color: var(--cinza);
+    box-shadow: 1px 3px 8px rgb(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+}
+
+.footerIcons>* {
+    font-size: 2rem;
+    margin: 5px 10px;
+    color: var(--preto);
+}
+
+.wp {
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.wp:hover {
+    color: var(--branco);
+}
+
+.gh {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.gh:hover {
+    color: var(--branco);
+}
+
+.dis {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.dis:hover {
+    color: var(--branco);
+}
+
+.lin {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.lin:hover {
+    color: var(--branco);
+}
+
+.footerAutor {
+    margin-top: 5px;
+    font-weight: bolder;
+
+}

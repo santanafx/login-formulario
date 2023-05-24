@@ -1,0 +1,11 @@
+.appNavBar {
+    margin-bottom: auto;
+}
+
+.appBody {
+    min-height: 80vh;
+}
+
+.appFooter {
+    margin-top: auto;
+}

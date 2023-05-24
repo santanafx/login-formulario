@@ -1,6 +1,7 @@
 import React from 'react'
 import { Context } from '../context/globalContext'
 import { useNavigate } from 'react-router-dom';
+import './Usuario.css'
 
 export const Usuario = () => {
 
@@ -13,8 +14,11 @@ export const Usuario = () => {
     }
 
     return (
-        <div>
+        <section className='bloco'>
+            <div >bloco1</div>
+            <div>bloco2</div>
+
             <button onClick={() => deslogar()}>Deslogar</button>
-        </div>
+        </section>
     )
 }
