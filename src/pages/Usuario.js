@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 
 export const Usuario = () => {
 
-    const { setAutenticar, autenticar } = React.useContext(Context);
+    const { setAutenticar } = React.useContext(Context);
     const navigate = useNavigate();
 
     const deslogar = () => {

@@ -8,12 +8,16 @@ export const Login = () => {
 
     const { dataBase, setAutenticar } = React.useContext(Context);
     const [usuario, setUsuario] = React.useState('');
-    const [usuarioInvalidado, setUsuarioInvalidado] = React.useState('');
     const [senha, setSenha] = React.useState('');
     const [senhaInvalidada, setSenhaInvalidada] = React.useState('');
     const [senhaComprimentoMinimoInvalido, setSenhaComprimentoMinimoInvalido] = React.useState('');
     const [senhaComprimentoMaximoInvalido, setSenhaComprimentoMaximoInvalido] = React.useState('');
     const [usuarioNaoCadastrado, setUsuarioNaoCadastrado] = React.useState('');
+    const [validaEmail, setValidaEmail] = React.useState(false);
+
+    React.useEffect(() => {
+        console.log(dataBase)
+    }, [dataBase])
 
     const fazerLogin = () => {
         if (senha.length < 6) {
@@ -24,13 +28,16 @@ export const Login = () => {
             setSenhaComprimentoMaximoInvalido(true);
         }
 
-        dataBase.forEach(element => {
-            if (element.usuario === usuario) {
-                setUsuarioInvalidado(false);
-            } else {
-                setUsuarioInvalidado(true);
-            }
+        let validaEmail = false;
+        if (usuario.includes('@') && usuario.includes('.com')) {
+            setValidaEmail(false);
+            validaEmail = false;
+        } else {
+            setValidaEmail(true);
+            validaEmail = true;
+        }
 
+        dataBase.forEach(element => {
             if (element.senha === senha) {
                 setSenhaInvalidada(false);
             } else {
@@ -40,8 +47,11 @@ export const Login = () => {
             if (element.usuario === usuario && element.senha === senha) {
                 setAutenticar(true);
                 navigate('/usuario');
-            } else {
+            }
+            if (element.usuario !== usuario) {
                 setUsuarioNaoCadastrado(true);
+            } else {
+                setUsuarioNaoCadastrado(false);
             }
 
         });
@@ -58,9 +68,9 @@ export const Login = () => {
 
                 <div>
                     <label htmlFor='usuario'>Usuário</label>
-                    <input className='loginInput' type="email" id='usuario' placeholder='Digite o seu email.' value={usuario} onChange={(event) => { setUsuario(event.target.value); setUsuarioInvalidado(false) }} />
-                    {usuarioInvalidado ? <span style={{ color: 'red' }}>Usuário inválido, por favor digite seu email.</span> : ''}
+                    <input className='loginInput' type="email" id='usuario' placeholder='Digite o seu email.' value={usuario} onChange={(event) => { setUsuario(event.target.value); }} />
                     {usuarioNaoCadastrado ? <span style={{ color: 'red' }}>Usuário não é cadastrado.</span> : ''}
+                    {validaEmail ? <span style={{ color: 'red' }}>Para logar é preciso informar seu email.</span> : ''}
 
                 </div>
 

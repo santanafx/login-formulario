@@ -7,6 +7,7 @@ import { Context } from './context/globalContext';
 import { Usuario } from './pages/Usuario';
 import { NotFound } from './pages/NotFound';
 import { NavBar } from './components/NavBar';
+import { Sobre } from './pages/Sobre';
 
 function App() {
 
@@ -19,6 +20,7 @@ function App() {
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/cadastro' element={<Cadastro />} />
+          <Route path='/sobre' element={<Sobre />} />
           {autenticar ? <Route path='/usuario' element={<Usuario />} /> : ''}
           <Route path='*' element={<NotFound />} />
         </Routes>

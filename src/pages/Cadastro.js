@@ -46,11 +46,13 @@ export const Cadastro = () => {
 
         }
 
+        let validaEmail = false;
         if (cadastroUsuario.includes('@') && cadastroUsuario.includes('.com')) {
             setValidaEmail(false);
+            validaEmail = false;
         } else {
             setValidaEmail(true);
-
+            validaEmail = true;
         }
 
         if (repetirCadastroSenha === cadastroSenha) {
