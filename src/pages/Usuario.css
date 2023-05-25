@@ -34,7 +34,7 @@
 .usuarioFotoImg {
     display: flex;
     justify-content: center;
-    margin: 23px 0;
+    margin: 20px 0;
     width: 100%;
 }
 
@@ -55,6 +55,7 @@
     display: flex;
     align-items: center;
     cursor: pointer;
+    background-color: var(--cinza-transparente-plus2);
 }
 
 .usuarioFoto label:hover {
@@ -69,6 +70,74 @@
     border: 1px solid var(--cinza);
     border-radius: 20px;
     margin: 1px;
+
+}
+
+.usuarioPerfilContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* justify-content: center; */
+}
+
+.usuarioPerfilContainer input {
+    border: none;
+    font-size: 1.5rem;
+    font-weight: 800;
+    padding: 1px 5px;
+    margin: 10px 10px 0 10px;
+
+}
+
+.usuarioPerfilContainer label {
+    border: 1px solid var(--cinza);
+    margin: 10px 0;
+    border-radius: 20px;
+    padding: 5px 30px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--cinza-transparente-plus2);
+}
+
+.usuarioPerfil label:hover {
+    color: var(--branco);
+    border: 1px solid var(--preto-claro);
+    background-color: var(--preto-claro);
+}
+
+.usuarioPerfilDescricaoContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.usuarioPerfilDescricaoContainer textarea {
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 1px 5px;
+    margin: 10px 10px 0 10px;
+    text-align: justify;
+}
+
+.usuarioPerfilDescricaoContainer label {
+    border: 1px solid var(--cinza);
+    margin: 10px 0;
+    border-radius: 20px;
+    padding: 5px 30px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    background-color: var(--cinza-transparente-plus2);
+}
+
+.usuarioPerfilDescricaoContainer label:hover {
+    color: var(--branco);
+    border: 1px solid var(--preto-claro);
+    background-color: var(--preto-claro);
 }
 
 .usuarioTexto {

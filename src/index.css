@@ -12,6 +12,7 @@
   --branco: #fff;
   --cinza-transparente: rgba(128, 128, 128, 0.4);
   --cinza-transparente-plus: rgba(240, 240, 240, 0.977);
+  --cinza-transparente-plus2: rgba(204, 204, 204, 0.977);
   --cinza-gradiente: radial-gradient(circle, rgba(254, 255, 0, 1) 40%, rgba(255, 0, 241, 1) 50%, rgba(69, 156, 255, 1) 100%);
 
 

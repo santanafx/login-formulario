@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 export const Login = () => {
     const navigate = useNavigate();
 
-    const { dataBase, setAutenticar } = React.useContext(Context);
+    const { dataBase, setAutenticar, setUsuarioLogado } = React.useContext(Context);
     const [usuario, setUsuario] = React.useState('');
     const [senha, setSenha] = React.useState('');
     const [senhaInvalidada, setSenhaInvalidada] = React.useState('');
@@ -46,6 +46,7 @@ export const Login = () => {
 
             if (element.usuario === usuario && element.senha === senha) {
                 setAutenticar(true);
+                setUsuarioLogado(usuario);
                 navigate('/usuario');
             }
             if (element.usuario !== usuario) {
