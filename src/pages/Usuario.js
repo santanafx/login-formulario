@@ -14,11 +14,21 @@ export const Usuario = () => {
     }
 
     return (
-        <section className='bloco'>
-            <div >bloco1</div>
-            <div>bloco2</div>
-
-            <button onClick={() => deslogar()}>Deslogar</button>
+        <section className='usuarioContainerBg'>
+            <div className='usuarioContainer'>
+                <div className='usuarioFoto'>bloco1</div>
+                <div className="usuarioPerfil">bloco2</div>
+                <div className='usuarioTexto'>bloco3</div>
+                <div className='usuarioLista'>
+                    <div>subbloco1</div>
+                    <div>subbloco2</div>
+                    <div>subbloco3</div>
+                    <div>subbloco4</div>
+                </div>
+                <div className='usuarioBotao'>
+                    <button onClick={() => deslogar()}>Deslogar</button>
+                </div>
+            </div>
         </section>
     )
 }

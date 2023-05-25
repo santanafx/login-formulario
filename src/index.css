@@ -9,4 +9,6 @@
   --azul: #459cff;
   --cinza: gray;
   --branco: #fff;
+  --cinza-transparente: rgba(128, 128, 128, 0.4);
+  --cinza-transparente-plus: rgba(240, 240, 240, 0.977);
 }

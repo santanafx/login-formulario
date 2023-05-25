@@ -1,3 +1,72 @@
-.bloco {
-    height: 200px;
+.usuarioContainerBg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.usuarioContainer {
+    background-color: var(--cinza-transparente-plus);
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: 1fr 0.8fr 0.8fr 0.8fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 0.3fr;
+
+    min-width: 1000px;
+    min-height: 650px;
+    padding: 60px 80px;
+    border-radius: 20px;
+    box-shadow: 1px 3px 8px rgb(0, 0, 0, 0.5);
+}
+
+.usuarioFoto {
+    grid-row: 1;
+    grid-column: 1;
+    background-color: grey;
+    margin: 1px;
+
+}
+
+.usuarioPerfil {
+    grid-row: 2 / span 2;
+    grid-column: 1;
+    background-color: green;
+    margin: 1px;
+}
+
+.usuarioTexto {
+    grid-row: 1 / span 3;
+    grid-column: 2 / span 4;
+    background-color: brown;
+    margin: 1px;
+}
+
+.usuarioLista {
+    grid-row: 4;
+    grid-column: 1 / span 4;
+    background-color: blue;
+    margin: 1px;
+}
+
+.usuarioBotao {
+    grid-row: 5;
+    grid-column: 1 / span 4;
+    background-color: rgb(255, 0, 195);
+    margin: 1px;
+}
+
+.usuarioBotao button {
+    padding: 5px 30px;
+    border-radius: 10px;
+    border-style: none;
+    font-weight: 900;
+    box-shadow: 1px 3px 8px rgb(0, 0, 0, 0.5);
+    transition: 0.3s;
+    cursor: pointer;
+    min-width: 145px;
+    text-align: center;
+}
+
+.usuarioBotao button:hover {
+    color: var(--cinza-transparente);
 }

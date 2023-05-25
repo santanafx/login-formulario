@@ -39,4 +39,8 @@
 
 .navBarContainer a:hover {
     color: var(--branco);
+    background-color: var(--cinza-transparente);
+    padding: 8px;
+    border-radius: 20px;
+
 }

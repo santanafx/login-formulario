@@ -5,7 +5,7 @@
 }
 
 .loginContainer {
-    background-color: var(--azul);
+    background-color: var(--cinza-transparente-plus);
     padding: 60px 80px;
     border-radius: 20px;
     box-shadow: 1px 3px 8px rgb(0, 0, 0, 0.5);
@@ -63,5 +63,5 @@
 }
 
 .loginButton button:hover {
-    color: var(--cinza);
+    color: var(--cinza-transparente);
 }
