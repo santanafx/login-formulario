@@ -40,8 +40,11 @@
 
 .usuarioFotoImg img {
     max-width: 150px;
-    border: 2px solid var(--cinza);
-    border-radius: 50%;
+    border: 3px solid transparent;
+    outline: var(--branco) solid 1px;
+    background: var(--cinza-gradiente);
+    border-radius: 10%;
+
 }
 
 .usuarioFoto label {
@@ -49,10 +52,15 @@
     border-radius: 20px;
     padding: 5px 30px;
     transition: 0.3s;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
 }
 
 .usuarioFoto label:hover {
-    color: var(--cinza);
+    color: var(--branco);
+    border: 1px solid var(--preto-claro);
+    background-color: var(--preto-claro);
 }
 
 .usuarioPerfil {

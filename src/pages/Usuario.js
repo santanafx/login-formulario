@@ -3,6 +3,7 @@ import { Context } from '../context/globalContext'
 import { useNavigate } from 'react-router-dom';
 import './Usuario.css'
 import profile from '../images/profile-img-default.png'
+import { AiOutlineEdit } from "react-icons/ai";
 
 export const Usuario = () => {
 
@@ -19,10 +20,6 @@ export const Usuario = () => {
         setImgProfile(URL.createObjectURL(imgFile));
     }
 
-    // React.useEffect(() => {
-    //     console.log('atualizou')
-    // }, [imgProfile])
-
     return (
         <section className='usuarioContainerBg'>
             <div className='usuarioContainer'>
@@ -30,7 +27,7 @@ export const Usuario = () => {
                     <div className='usuarioFotoImg'>
                         <img src={imgProfile} alt="Foto de perfil" />
                     </div>
-                    <label htmlFor='escolherImagem'>Escolha a imagem</label>
+                    <label htmlFor='escolherImagem'><AiOutlineEdit />Escolha a imagem</label>
                     <input id='escolherImagem' accept='image/*' style={{ visibility: "hidden" }} type="file" onChange={(event) => handleChangeImg(event.target.files[0])} />
                 </div>
                 <div className="usuarioPerfil">bloco2</div>
