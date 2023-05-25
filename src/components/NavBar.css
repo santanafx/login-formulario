@@ -21,10 +21,14 @@
     font-weight: bold;
     transition: 0.3s;
     cursor: pointer;
+    width: 110px;
 }
 
 .navBarLogin:hover {
     color: var(--branco);
+    background-color: var(--cinza-transparente);
+    padding: 8px;
+    border-radius: 20px;
 }
 
 .navBarContainer a {
@@ -39,8 +43,4 @@
 
 .navBarContainer a:hover {
     color: var(--branco);
-    background-color: var(--cinza-transparente);
-    padding: 8px;
-    border-radius: 20px;
-
 }

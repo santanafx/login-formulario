@@ -9,6 +9,7 @@ import { NotFound } from './pages/NotFound';
 import { NavBar } from './components/NavBar';
 import { Sobre } from './pages/Sobre';
 import { Footer } from './components/Footer';
+import { Inicio } from './pages/Inicio';
 
 function App() {
 
@@ -20,7 +21,8 @@ function App() {
         <NavBar className='appNavBar' />
         <div className="appBody">
           <Routes>
-            <Route path='/' element={<Login />} />
+            <Route path='/' element={<Inicio />} />
+            <Route path='/login' element={<Login />} />
             <Route path='/cadastro' element={<Cadastro />} />
             <Route path='/sobre' element={<Sobre />} />
             {autenticar ? <Route path='/usuario' element={<Usuario />} /> : ''}

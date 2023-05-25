@@ -10,8 +10,7 @@
     margin: 50px 0;
     display: grid;
     grid-template-columns: 1fr 0.8fr 0.8fr 0.8fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 0.3fr;
-
+    grid-template-rows: 1fr 1fr 1fr 0.3fr;
     min-width: 1000px;
     height: auto;
     padding: 60px 80px;
@@ -24,7 +23,7 @@
     grid-column: 1;
     border: 1px solid var(--cinza);
     border-radius: 20px;
-    margin: 1px;
+    margin: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,8 +53,10 @@
     transition: 0.3s;
     display: flex;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
     background-color: var(--cinza-transparente-plus2);
+    min-width: 214px;
 }
 
 .usuarioFoto label:hover {
@@ -69,24 +70,29 @@
     grid-column: 1;
     border: 1px solid var(--cinza);
     border-radius: 20px;
-    margin: 1px;
+    margin: 10px;
 
+}
+
+.usuarioPerfil span {
+    display: flex;
+    align-items: center;
 }
 
 .usuarioPerfilContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
-    /* justify-content: center; */
 }
 
-.usuarioPerfilContainer input {
+.usuarioPerfilContainer textarea {
     border: none;
     font-size: 1.5rem;
     font-weight: 800;
     padding: 1px 5px;
     margin: 10px 10px 0 10px;
-
+    text-align: justify;
+    resize: none;
 }
 
 .usuarioPerfilContainer label {
@@ -97,8 +103,10 @@
     transition: 0.3s;
     display: flex;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
     background-color: var(--cinza-transparente-plus2);
+    min-width: 214px;
 }
 
 .usuarioPerfil label:hover {
@@ -120,6 +128,7 @@
     padding: 1px 5px;
     margin: 10px 10px 0 10px;
     text-align: justify;
+    resize: none;
 }
 
 .usuarioPerfilDescricaoContainer label {
@@ -130,8 +139,10 @@
     transition: 0.3s;
     display: flex;
     align-items: center;
+    justify-content: center;
     cursor: pointer;
     background-color: var(--cinza-transparente-plus2);
+    min-width: 214px;
 }
 
 .usuarioPerfilDescricaoContainer label:hover {
@@ -140,33 +151,68 @@
     background-color: var(--preto-claro);
 }
 
-.usuarioTexto {
+.usuarioPerfilLocalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.usuarioPerfilLocalContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.usuarioPerfilLocal {
+    display: flex;
+    align-items: center;
+}
+
+.usuarioPerfilLocal svg {
+    color: var(--cinza);
+}
+
+.usuarioPerfilLocalContainer textarea {
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 300;
+    padding: 1px 5px;
+    resize: none;
+}
+
+.usuarioPerfilLocalContainer label {
+    border: 1px solid var(--cinza);
+    margin: 10px 0;
+    border-radius: 20px;
+    padding: 5px 30px;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background-color: var(--cinza-transparente-plus2);
+    min-width: 214px;
+}
+
+.usuarioPosts {
     grid-row: 1 / span 3;
     grid-column: 2 / span 4;
     border: 1px solid var(--cinza);
     border-radius: 20px;
-    margin: 1px;
-}
-
-.usuarioLista {
-    grid-row: 4;
-    grid-column: 1 / span 4;
-    border: 1px solid var(--cinza);
-    border-radius: 20px;
-    margin: 1px;
+    margin: 10px;
 }
 
 .usuarioBotao {
-    grid-row: 5;
+    grid-row: 4;
     grid-column: 1 / span 4;
-
-    margin: 1px;
     display: flex;
     justify-content: center;
+    align-items: center;
     margin: 10px 0;
 }
 
 .usuarioBotao button {
+    height: 30px;
     padding: 5px 30px;
     border-radius: 10px;
     border-style: none;

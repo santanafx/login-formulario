@@ -14,7 +14,7 @@ export const Cadastro = () => {
     const [repetirCadastroSenha, setRepetirCadastroSenha] = React.useState('');
     const [usuarioCadastrado, setUsuarioCadastrado] = React.useState(false);
     const [validaEmail, setValidaEmail] = React.useState(false);
-    let novaData = {}
+    // let novaData = {}
 
     // React.useEffect(() => {
     //     console.log(dataBase)
@@ -24,7 +24,7 @@ export const Cadastro = () => {
 
     const cadastrar = () => {
 
-        novaData = {
+        let novaData = {
             id: dataBase.length + 1,
             usuario: cadastroUsuario,
             senha: cadastroSenha,
@@ -78,14 +78,10 @@ export const Cadastro = () => {
 
     }
 
-
-
-
     return (
         <section className='cadastroContainerBg'>
             <div className='cadastroContainer'>
                 <h1>Faça o seu cadastro:</h1>
-
                 <div>
                     <label htmlFor='cadastroUsuario'>Usuário</label>
                     <input className='loginInput' type="email" id='cadastroUsuario' placeholder='Digite o seu email.' value={cadastroUsuario} onChange={(event) => { setCadastroUsuario(event.target.value); setUsuarioCadastrado(false); }} />
