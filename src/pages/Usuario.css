@@ -7,13 +7,13 @@
 
 .usuarioContainer {
     background-color: var(--cinza-transparente-plus);
-    margin-top: 50px;
+    margin: 50px 0;
     display: grid;
     grid-template-columns: 1fr 0.8fr 0.8fr 0.8fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 0.3fr;
 
     min-width: 1000px;
-    min-height: 650px;
+    height: auto;
     padding: 60px 80px;
     border-radius: 20px;
     box-shadow: 1px 3px 8px rgb(0, 0, 0, 0.5);
@@ -22,37 +22,71 @@
 .usuarioFoto {
     grid-row: 1;
     grid-column: 1;
-    background-color: grey;
+    border: 1px solid var(--cinza);
+    border-radius: 20px;
     margin: 1px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 
+}
+
+.usuarioFotoImg {
+    display: flex;
+    justify-content: center;
+    margin: 23px 0;
+    width: 100%;
+}
+
+.usuarioFotoImg img {
+    max-width: 150px;
+    border: 2px solid var(--cinza);
+    border-radius: 50%;
+}
+
+.usuarioFoto label {
+    border: 1px solid var(--cinza);
+    border-radius: 20px;
+    padding: 5px 30px;
+    transition: 0.3s;
+}
+
+.usuarioFoto label:hover {
+    color: var(--cinza);
 }
 
 .usuarioPerfil {
     grid-row: 2 / span 2;
     grid-column: 1;
-    background-color: green;
+    border: 1px solid var(--cinza);
+    border-radius: 20px;
     margin: 1px;
 }
 
 .usuarioTexto {
     grid-row: 1 / span 3;
     grid-column: 2 / span 4;
-    background-color: brown;
+    border: 1px solid var(--cinza);
+    border-radius: 20px;
     margin: 1px;
 }
 
 .usuarioLista {
     grid-row: 4;
     grid-column: 1 / span 4;
-    background-color: blue;
+    border: 1px solid var(--cinza);
+    border-radius: 20px;
     margin: 1px;
 }
 
 .usuarioBotao {
     grid-row: 5;
     grid-column: 1 / span 4;
-    background-color: rgb(255, 0, 195);
+
     margin: 1px;
+    display: flex;
+    justify-content: center;
+    margin: 10px 0;
 }
 
 .usuarioBotao button {

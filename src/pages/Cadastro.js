@@ -16,10 +16,10 @@ export const Cadastro = () => {
     const [validaEmail, setValidaEmail] = React.useState(false);
     let novaData = {}
 
-    React.useEffect(() => {
-        console.log(dataBase)
+    // React.useEffect(() => {
+    //     console.log(dataBase)
 
-    }, [dataBase])
+    // }, [dataBase])
 
 
     const cadastrar = () => {
