@@ -3,10 +3,18 @@
     display: flex;
     align-items: center;
     height: 100px;
+    justify-content: center;
 }
 
 .navBarContainer {
-    width: 100%;
+    flex-basis: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navBarContainerOp {
+
     display: flex;
     align-items: center;
 }
@@ -43,4 +51,26 @@
 
 .navBarContainer a:hover {
     color: var(--branco);
+}
+
+.navBarUsuarioFoto {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.navBarUsuarioFoto img {
+    max-width: 50px;
+    border: 3px solid transparent;
+    outline: var(--branco) solid 1px;
+    background: var(--cinza-gradiente);
+    border-radius: 10%;
+    margin: 0 10px;
+
+}
+
+.navBarUsuarioFoto span {
+    font-weight: 700;
 }

@@ -7,7 +7,7 @@ export const ContextProvider = ({ children }) => {
 
     const [dataBase, setDataBase] = React.useState([{}]);
 
-    const [usuarioLogado, setUsuarioLogado] = React.useState('');
+    const [usuarioLogado, setUsuarioLogado] = React.useState([{}]);
 
 
     return (

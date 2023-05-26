@@ -8,7 +8,7 @@ import { MdLocationOn } from "react-icons/md";
 
 export const Usuario = () => {
 
-    const { dataBase, usuarioLogado } = useContext(Context)
+    const { dataBase, usuarioLogado, setUsuarioLogado } = useContext(Context)
     const [imgProfile, setImgProfile] = React.useState(profile);
     const [nome, setNome] = React.useState(true);
     const [nomeUsuario, setNomeUsuario] = React.useState('');
@@ -30,9 +30,16 @@ export const Usuario = () => {
     }
 
     React.useEffect(() => {
-        console.log(dataBase)
+        let atualizacaoUsuario = {
+            id: usuarioLogado.id,
+            profile: imgProfile,
+            senha: usuarioLogado.senha,
+            usuario: usuarioLogado.usuario,
+        };
 
-    }, [])
+        setUsuarioLogado(atualizacaoUsuario);
+        console.log(usuarioLogado)
+    }, [imgProfile])
 
     return (
         <section className='usuarioContainerBg'>
@@ -52,7 +59,7 @@ export const Usuario = () => {
                         <label onClick={() => setNome(false)} htmlFor='nome'><AiOutlineEdit />Defina seu nome</label>
                     </div>
 
-                    <span style={{ color: 'var(--cinza)', marginLeft: '15px' }}><AiOutlineMail />{usuarioLogado}</span>
+                    <span style={{ color: 'var(--cinza)', marginLeft: '15px' }}><AiOutlineMail />{usuarioLogado.usuario}</span>
 
                     <div className='usuarioPerfilDescricaoContainer'>
                         <textarea cols="30" rows="5" onBlur={(event) => { setDescricao(true); setDescricaoUsuario(event.target.value) }} id='descricao' type="text" disabled={descricao} />

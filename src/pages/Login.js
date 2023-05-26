@@ -20,6 +20,7 @@ export const Login = () => {
     // }, [dataBase])
 
     const fazerLogin = () => {
+
         if (senha.length < 6) {
             setSenhaComprimentoMinimoInvalido(true);
         }
@@ -37,7 +38,7 @@ export const Login = () => {
             validaEmail = true;
         }
 
-        dataBase.forEach(element => {
+        dataBase.map(element => {
             if (element.senha === senha) {
                 setSenhaInvalidada(false);
             } else {
@@ -46,9 +47,10 @@ export const Login = () => {
 
             if (element.usuario === usuario && element.senha === senha) {
                 setAutenticar(true);
-                setUsuarioLogado(usuario);
+                setUsuarioLogado(element);
                 navigate('/usuario');
             }
+
             if (element.usuario !== usuario) {
                 setUsuarioNaoCadastrado(true);
             } else {

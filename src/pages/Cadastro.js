@@ -28,6 +28,7 @@ export const Cadastro = () => {
             id: dataBase.length + 1,
             usuario: cadastroUsuario,
             senha: cadastroSenha,
+            profile: '',
         }
 
         if (cadastroSenha.length < 6) {
