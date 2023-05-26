@@ -73,4 +73,28 @@
 
 .navBarUsuarioFoto span {
     font-weight: 700;
+    margin: 0 10px;
+}
+
+.navBarUsuarioFoto button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 10px;
+
+    height: 30px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    border-style: none;
+    font-weight: 900;
+    box-shadow: 1px 3px 8px rgb(0, 0, 0, 0.5);
+    transition: 0.3s;
+    cursor: pointer;
+    font-size: 0.8rem;
+    min-width: 50px;
+
+}
+
+.navBarUsuarioFoto button:hover {
+    color: var(--cinza-transparente);
 }

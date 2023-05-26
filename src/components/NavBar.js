@@ -1,13 +1,20 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 import './NavBar.css'
-import { MdHome, MdArticle } from "react-icons/md";
+import { MdHome, MdArticle, MdLogout } from "react-icons/md";
 import { HiUser } from "react-icons/hi";
 import { Context } from '../context/globalContext';
 
 export const NavBar = () => {
 
-    const { autenticar, dataBase, usuarioLogado } = React.useContext(Context);
+    const { autenticar, setAutenticar, dataBase, usuarioLogado } = React.useContext(Context);
+
+    const navigate = useNavigate();
+
+    const deslogar = () => {
+        setAutenticar(false);
+        navigate('/');
+    }
 
     return (
         <section className='navBarContainerBg'>
@@ -27,6 +34,7 @@ export const NavBar = () => {
                     <div className='navBarUsuarioFoto' >
                         <img src={usuarioLogado.profile} alt="Foto de perfil" />
                         <span>Bem vindo, {usuarioLogado.usuario}</span>
+                        <button onClick={() => deslogar()}><MdLogout /> Deslogar</button>
                     </div>
                     :
                     <div className='navBarLogin'>
