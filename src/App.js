@@ -10,6 +10,7 @@ import { NavBar } from './components/NavBar';
 import { Sobre } from './pages/Sobre';
 import { Footer } from './components/Footer';
 import { Inicio } from './pages/Inicio';
+import { Postar } from './pages/Postar';
 
 function App() {
 
@@ -26,6 +27,7 @@ function App() {
             <Route path='/cadastro' element={<Cadastro />} />
             <Route path='/sobre' element={<Sobre />} />
             {autenticar ? <Route path='/usuario' element={<Usuario />} /> : ''}
+            {autenticar ? <Route path='/postar' element={<Postar />} /> : ''}
             <Route path='*' element={<NotFound />} />
           </Routes>
         </div>

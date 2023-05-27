@@ -27,7 +27,21 @@ export const ContextProvider = ({ children }) => {
 
     const [atualizarInformacoes, setAtualizarInformacoes] = React.useState(false);
 
+    // const [postId, setPostId] = React.useState('');
+
     const [usuarioLogado, setUsuarioLogado] = React.useState([{}]);
+
+    // const allPostsList = [
+    //     {
+    //         idComentario: 0,
+    //         foto: '',
+    //         comentario: '',
+    //         profile: '',
+    //         nome: '',
+    //     }
+    // ];
+
+    // const [allPosts, setAllPosts] = React.useState(allPostsList);
 
 
     return (

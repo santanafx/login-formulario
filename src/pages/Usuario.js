@@ -7,7 +7,7 @@ import { MdLocationOn } from "react-icons/md";
 
 export const Usuario = () => {
 
-    const { usuarioLogado, dataBase, setDataBase, setAtualizarInformacoes } = useContext(Context)
+    const { usuarioLogado, dataBase, setDataBase, setAtualizarInformacoes, setUsuarioLogado } = useContext(Context)
     const [imgProfile, setImgProfile] = React.useState('');
     const [nome, setNome] = React.useState(true);
     const [nomeUsuario, setNomeUsuario] = React.useState('');
@@ -46,6 +46,7 @@ export const Usuario = () => {
             }
         }
         setDataBase(copyDataBase);
+        setUsuarioLogado(atualizacaoUsuario);
         setAtualizarInformacoes(true);
         console.log(dataBase)
 

@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './NavBar.css'
-import { MdHome, MdArticle, MdLogout } from "react-icons/md";
+import { MdHome, MdArticle, MdLogout, MdOutlinePostAdd } from "react-icons/md";
 import { BsGearFill } from "react-icons/bs";
 import { HiUser } from "react-icons/hi";
 import { Context } from '../context/globalContext';
@@ -36,6 +36,10 @@ export const NavBar = () => {
         navigate('/usuario');
     }
 
+    const postar = () => {
+        navigate('/postar')
+    }
+
     return (
         <section className='navBarContainerBg'>
             <nav className='navBarContainer'>
@@ -54,6 +58,7 @@ export const NavBar = () => {
                     <div className='navBarUsuarioFoto' >
                         <img src={imgProfile} alt="Foto de perfil" />
                         <span>Bem vindo, {usuarioLogado.usuario}</span>
+                        {/* <button onClick={() => postar()}><MdOutlinePostAdd /> Postar</button> */}
                         <button onClick={() => entrarUsuario()}><BsGearFill /> Configurar</button>
                         <button onClick={() => deslogar()}><MdLogout /> Deslogar</button>
                     </div>
