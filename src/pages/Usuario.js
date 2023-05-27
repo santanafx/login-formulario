@@ -112,7 +112,7 @@ export const Usuario = () => {
                 </div>
 
                 <div className='usuarioPosts'>
-                    <h1>Gerenciador de Posts</h1>
+                    <h1>Conte sobre sua história.</h1>
                 </div>
 
                 <div className='usuarioBotao'>

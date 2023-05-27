@@ -27,22 +27,15 @@ export const ContextProvider = ({ children }) => {
 
     const [atualizarInformacoes, setAtualizarInformacoes] = React.useState(false);
 
-    // const [postId, setPostId] = React.useState('');
-
-    const [usuarioLogado, setUsuarioLogado] = React.useState([{}]);
-
-    // const allPostsList = [
-    //     {
-    //         idComentario: 0,
-    //         foto: '',
-    //         comentario: '',
-    //         profile: '',
-    //         nome: '',
-    //     }
-    // ];
-
-    // const [allPosts, setAllPosts] = React.useState(allPostsList);
-
+    const [usuarioLogado, setUsuarioLogado] = React.useState([{
+        id: '',
+        profile: '',
+        senha: '',
+        usuario: '',
+        localidade: '',
+        descricao: '',
+        nome: '',
+    }]);
 
     return (
         <Context.Provider value={{ dataBase, setDataBase, dispatch, autenticar, setAutenticar, usuarioLogado, setUsuarioLogado, atualizarInformacoes, setAtualizarInformacoes }}>{children}</Context.Provider>

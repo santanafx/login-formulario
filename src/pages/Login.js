@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 export const Login = () => {
     const navigate = useNavigate();
 
-    const { dataBase, setAutenticar, setUsuarioLogado } = React.useContext(Context);
+    const { dataBase, setAutenticar, setUsuarioLogado, usuarioLogado } = React.useContext(Context);
     const [usuario, setUsuario] = React.useState('');
     const [senha, setSenha] = React.useState('');
     const [senhaInvalidada, setSenhaInvalidada] = React.useState('');
@@ -16,6 +16,16 @@ export const Login = () => {
     const [validaEmail, setValidaEmail] = React.useState(false);
 
     const fazerLogin = () => {
+
+        const atualizacaoUsuario = {
+            id: usuarioLogado.id,
+            profile: '',
+            senha: usuarioLogado.senha,
+            usuario: usuarioLogado.usuario,
+            localidade: usuarioLogado.localidade,
+            descricao: usuarioLogado.descricao,
+            nome: usuarioLogado.nome,
+        };
 
         if (senha.length < 6) {
             setSenhaComprimentoMinimoInvalido(true);
@@ -34,7 +44,7 @@ export const Login = () => {
             validaEmail = true;
         }
 
-        dataBase.forEach(element => {
+        dataBase.map(element => {
             if (element.senha === senha) {
                 setSenhaInvalidada(false);
             } else {
