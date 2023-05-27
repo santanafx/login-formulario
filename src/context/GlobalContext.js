@@ -25,10 +25,12 @@ export const ContextProvider = ({ children }) => {
 
     const [autenticar, setAutenticar] = React.useState(false);
 
+    const [atualizarInformacoes, setAtualizarInformacoes] = React.useState(false);
+
     const [usuarioLogado, setUsuarioLogado] = React.useState([{}]);
 
 
     return (
-        <Context.Provider value={{ dataBase, setDataBase, dispatch, autenticar, setAutenticar, usuarioLogado, setUsuarioLogado }}>{children}</Context.Provider>
+        <Context.Provider value={{ dataBase, setDataBase, dispatch, autenticar, setAutenticar, usuarioLogado, setUsuarioLogado, atualizarInformacoes, setAtualizarInformacoes }}>{children}</Context.Provider>
     )
 }

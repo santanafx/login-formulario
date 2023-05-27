@@ -4,14 +4,15 @@ import './NavBar.css'
 import { MdHome, MdArticle, MdLogout } from "react-icons/md";
 import { HiUser } from "react-icons/hi";
 import { Context } from '../context/globalContext';
+import imgDefault from '../images/profile-img-default.png'
 
 export const NavBar = () => {
 
-    const { autenticar, setAutenticar, usuarioLogado, dataBase } = React.useContext(Context);
+    const { autenticar, setAutenticar, usuarioLogado, dataBase, atualizarInformacoes, setAtualizarInformacoes } = React.useContext(Context);
 
     const navigate = useNavigate();
 
-    const [imgProfile, setImgProfile] = React.useState('');
+    const [imgProfile, setImgProfile] = React.useState(imgDefault);
 
 
     React.useEffect(() => {
@@ -19,9 +20,10 @@ export const NavBar = () => {
         dataBase.forEach((element) => {
             if (element.id === usuarioLogado.id) {
                 setImgProfile(element.profile)
+                setAtualizarInformacoes(false)
             }
         })
-    }, [dataBase])
+    }, [atualizarInformacoes, autenticar])
 
     const deslogar = () => {
         setAutenticar(false);

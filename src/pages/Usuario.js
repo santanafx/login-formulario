@@ -8,7 +8,7 @@ import imgDefault from '../images/profile-img-default.png'
 
 export const Usuario = () => {
 
-    const { usuarioLogado, setUsuarioLogado, dataBase, dispatch, setDataBase } = useContext(Context)
+    const { usuarioLogado, setUsuarioLogado, dataBase, dispatch, setDataBase, atualizarInformacoes, setAtualizarInformacoes } = useContext(Context)
     const [imgProfile, setImgProfile] = React.useState('');
     const [nome, setNome] = React.useState(true);
     const [nomeUsuario, setNomeUsuario] = React.useState('');
@@ -34,15 +34,14 @@ export const Usuario = () => {
         const atualizacaoUsuario = {
             id: usuarioLogado.id,
             profile: imgProfile,
-            senha: '123456789',
+            senha: usuarioLogado.senha,
             usuario: usuarioLogado.usuario,
         };
 
         // console.log(atualizacaoUsuario)
 
         // setUsuarioLogado(atualizacaoUsuario);
-        console.log(usuarioLogado);
-        console.log(atualizacaoUsuario)
+
 
         // copyData.map((element) => {
         //     if (element.id === usuarioLogado.id) {
@@ -57,14 +56,11 @@ export const Usuario = () => {
 
         for (var i = 0; i < copyDataBase.length; i++) {
             if (copyDataBase[i].id === usuarioLogado.id) {
-
-                copyDataBase[i].profile = atualizacaoUsuario.profile;
+                copyDataBase[i] = atualizacaoUsuario;
             }
         }
-
         setDataBase(copyDataBase);
-        console.log(dataBase)
-
+        setAtualizarInformacoes(true);
 
     }
 
