@@ -2,14 +2,14 @@ import React, { useContext } from 'react'
 import { Context } from '../context/globalContext'
 import { useNavigate } from 'react-router-dom';
 import './Usuario.css'
-import profile from '../images/profile-img-default.png'
 import { AiOutlineEdit, AiOutlineMail } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
+import imgDefault from '../images/profile-img-default.png'
 
 export const Usuario = () => {
 
-    const { dataBase, usuarioLogado, setUsuarioLogado } = useContext(Context)
-    const [imgProfile, setImgProfile] = React.useState(profile);
+    const { usuarioLogado, setUsuarioLogado, dataBase, dispatch, setDataBase } = useContext(Context)
+    const [imgProfile, setImgProfile] = React.useState('');
     const [nome, setNome] = React.useState(true);
     const [nomeUsuario, setNomeUsuario] = React.useState('');
     const [descricaoUsuario, setDescricaoUsuario] = React.useState('');
@@ -17,29 +17,60 @@ export const Usuario = () => {
     const [local, setLocal] = React.useState(true);
     const [localUsuario, setLocalUsuario] = React.useState('');
 
-    const { setAutenticar } = React.useContext(Context);
-    const navigate = useNavigate();
+    React.useEffect(() => {
 
-    const deslogar = () => {
-        setAutenticar(false);
-        navigate('/');
+        // console.log(usuarioLogado)
+        dataBase.forEach((element) => {
+            if (element.id === usuarioLogado.id) {
+                setImgProfile(element.profile)
+            }
+        })
+    }, [])
+
+
+    const salvar = () => {
+
+
+        const atualizacaoUsuario = {
+            id: usuarioLogado.id,
+            profile: imgProfile,
+            senha: '123456789',
+            usuario: usuarioLogado.usuario,
+        };
+
+        // console.log(atualizacaoUsuario)
+
+        // setUsuarioLogado(atualizacaoUsuario);
+        console.log(usuarioLogado);
+        console.log(atualizacaoUsuario)
+
+        // copyData.map((element) => {
+        //     if (element.id === usuarioLogado.id) {
+        //         return element = atualizacaoUsuario;
+        //     }
+
+
+        //     dispatch('ATT_USUARIO', { newDataBase: newDataBase })
+        //     console.log(element);
+        // })
+        const copyDataBase = dataBase;
+
+        for (var i = 0; i < copyDataBase.length; i++) {
+            if (copyDataBase[i].id === usuarioLogado.id) {
+
+                copyDataBase[i].profile = atualizacaoUsuario.profile;
+            }
+        }
+
+        setDataBase(copyDataBase);
+        console.log(dataBase)
+
+
     }
 
     const handleChangeImg = (imgFile) => {
         setImgProfile(URL.createObjectURL(imgFile));
     }
-
-    React.useEffect(() => {
-        let atualizacaoUsuario = {
-            id: usuarioLogado.id,
-            profile: imgProfile,
-            senha: usuarioLogado.senha,
-            usuario: usuarioLogado.usuario,
-        };
-
-        setUsuarioLogado(atualizacaoUsuario);
-        console.log(usuarioLogado)
-    }, [imgProfile])
 
     return (
         <section className='usuarioContainerBg'>
@@ -81,7 +112,7 @@ export const Usuario = () => {
                 </div>
 
                 <div className='usuarioBotao'>
-                    <button onClick={() => deslogar()}>Deslogar</button>
+                    <button onClick={() => salvar()}>Salvar</button>
                 </div>
             </div>
         </section >

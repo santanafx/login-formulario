@@ -1,10 +1,11 @@
 import React from 'react'
 import './Cadastro.css'
 import { Context } from '../context/globalContext';
+import imgDefault from '../images/profile-img-default.png'
 
 export const Cadastro = () => {
 
-    const { dataBase, setDataBase } = React.useContext(Context);
+    const { dataBase, dispatch } = React.useContext(Context);
 
     const [cadastroUsuario, setCadastroUsuario] = React.useState('');
     const [cadastroSenha, setCadastroSenha] = React.useState('');
@@ -16,19 +17,19 @@ export const Cadastro = () => {
     const [validaEmail, setValidaEmail] = React.useState(false);
     // let novaData = {}
 
-    // React.useEffect(() => {
-    //     console.log(dataBase)
+    React.useEffect(() => {
+        console.log(dataBase)
 
-    // }, [dataBase])
+    }, [dataBase])
 
 
     const cadastrar = () => {
 
         let novaData = {
-            id: dataBase.length + 1,
+            id: dataBase.length,
             usuario: cadastroUsuario,
             senha: cadastroSenha,
-            profile: '',
+            profile: imgDefault,
         }
 
         if (cadastroSenha.length < 6) {
@@ -74,7 +75,8 @@ export const Cadastro = () => {
         })
 
         if (cadastroSenhaInvalida === false && usuarioEncontrado === false && cadastroSenhaCompMinInv === false && cadastroSenhaCompMaxInv === false && validaEmail === false) {
-            setDataBase([...dataBase, novaData]);
+            // setDataBase([...dataBase, novaData]);
+            dispatch('ADD_USUARIO', { novaData: novaData })
         }
 
     }

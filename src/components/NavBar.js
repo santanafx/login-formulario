@@ -7,13 +7,29 @@ import { Context } from '../context/globalContext';
 
 export const NavBar = () => {
 
-    const { autenticar, setAutenticar, dataBase, usuarioLogado } = React.useContext(Context);
+    const { autenticar, setAutenticar, usuarioLogado, dataBase } = React.useContext(Context);
 
     const navigate = useNavigate();
+
+    const [imgProfile, setImgProfile] = React.useState('');
+
+
+    React.useEffect(() => {
+
+        dataBase.forEach((element) => {
+            if (element.id === usuarioLogado.id) {
+                setImgProfile(element.profile)
+            }
+        })
+    }, [dataBase])
 
     const deslogar = () => {
         setAutenticar(false);
         navigate('/');
+    }
+
+    const entrarUsuario = () => {
+        navigate('/usuario');
     }
 
     return (
@@ -32,7 +48,7 @@ export const NavBar = () => {
                 </div>
                 {autenticar ?
                     <div className='navBarUsuarioFoto' >
-                        <img src={usuarioLogado.profile} alt="Foto de perfil" />
+                        <img onClick={() => entrarUsuario()} src={imgProfile} alt="Foto de perfil" />
                         <span>Bem vindo, {usuarioLogado.usuario}</span>
                         <button onClick={() => deslogar()}><MdLogout /> Deslogar</button>
                     </div>

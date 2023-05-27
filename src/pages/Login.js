@@ -6,7 +6,7 @@ import { useNavigate } from 'react-router-dom';
 export const Login = () => {
     const navigate = useNavigate();
 
-    const { dataBase, setAutenticar, setUsuarioLogado } = React.useContext(Context);
+    const { dataBase, setAutenticar, setUsuarioLogado, usuarioLogado } = React.useContext(Context);
     const [usuario, setUsuario] = React.useState('');
     const [senha, setSenha] = React.useState('');
     const [senhaInvalidada, setSenhaInvalidada] = React.useState('');
@@ -16,8 +16,10 @@ export const Login = () => {
     const [validaEmail, setValidaEmail] = React.useState(false);
 
     // React.useEffect(() => {
-    //     console.log(dataBase)
-    // }, [dataBase])
+    //     dataBase.forEach((element) => {
+    //         console.log(element)
+    //     })
+    // }, [])
 
     const fazerLogin = () => {
 
@@ -38,7 +40,7 @@ export const Login = () => {
             validaEmail = true;
         }
 
-        dataBase.map(element => {
+        dataBase.forEach(element => {
             if (element.senha === senha) {
                 setSenhaInvalidada(false);
             } else {

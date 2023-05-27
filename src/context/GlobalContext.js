@@ -3,14 +3,32 @@ import React from 'react'
 export const Context = React.createContext();
 
 export const ContextProvider = ({ children }) => {
-    const [autenticar, setAutenticar] = React.useState(false);
+    const dataBaseList = [
+        {}
+    ];
 
-    const [dataBase, setDataBase] = React.useState([{}]);
+    const [dataBase, setDataBase] = React.useState(dataBaseList);
+
+    const dispatch = (actionType, payload) => {
+        switch (actionType) {
+            case 'ADD_USUARIO':
+                setDataBase([...dataBase, payload.novaData])
+                return;
+            case 'ATT_USUARIO':
+                setDataBase(payload.newDataBase)
+                return;
+
+            default:
+                return;
+        }
+    }
+
+    const [autenticar, setAutenticar] = React.useState(false);
 
     const [usuarioLogado, setUsuarioLogado] = React.useState([{}]);
 
 
     return (
-        <Context.Provider value={{ dataBase, autenticar, setAutenticar, setDataBase, usuarioLogado, setUsuarioLogado }}>{children}</Context.Provider>
+        <Context.Provider value={{ dataBase, setDataBase, dispatch, autenticar, setAutenticar, usuarioLogado, setUsuarioLogado }}>{children}</Context.Provider>
     )
 }
