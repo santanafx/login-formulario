@@ -2,9 +2,11 @@ import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import './NavBar.css'
 import { MdHome, MdArticle, MdLogout } from "react-icons/md";
+import { BsGearFill } from "react-icons/bs";
 import { HiUser } from "react-icons/hi";
 import { Context } from '../context/globalContext';
 import imgDefault from '../images/profile-img-default.png'
+
 
 export const NavBar = () => {
 
@@ -50,8 +52,9 @@ export const NavBar = () => {
                 </div>
                 {autenticar ?
                     <div className='navBarUsuarioFoto' >
-                        <img onClick={() => entrarUsuario()} src={imgProfile} alt="Foto de perfil" />
+                        <img src={imgProfile} alt="Foto de perfil" />
                         <span>Bem vindo, {usuarioLogado.usuario}</span>
+                        <button onClick={() => entrarUsuario()}><BsGearFill /> Configurar</button>
                         <button onClick={() => deslogar()}><MdLogout /> Deslogar</button>
                     </div>
                     :

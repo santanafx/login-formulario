@@ -1,14 +1,13 @@
 import React, { useContext } from 'react'
 import { Context } from '../context/globalContext'
-import { useNavigate } from 'react-router-dom';
 import './Usuario.css'
 import { AiOutlineEdit, AiOutlineMail } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
-import imgDefault from '../images/profile-img-default.png'
+
 
 export const Usuario = () => {
 
-    const { usuarioLogado, setUsuarioLogado, dataBase, dispatch, setDataBase, atualizarInformacoes, setAtualizarInformacoes } = useContext(Context)
+    const { usuarioLogado, dataBase, setDataBase, setAtualizarInformacoes } = useContext(Context)
     const [imgProfile, setImgProfile] = React.useState('');
     const [nome, setNome] = React.useState(true);
     const [nomeUsuario, setNomeUsuario] = React.useState('');

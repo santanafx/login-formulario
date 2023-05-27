@@ -15,7 +15,6 @@ export const Cadastro = () => {
     const [repetirCadastroSenha, setRepetirCadastroSenha] = React.useState('');
     const [usuarioCadastrado, setUsuarioCadastrado] = React.useState(false);
     const [validaEmail, setValidaEmail] = React.useState(false);
-    // let novaData = {}
 
     React.useEffect(() => {
         console.log(dataBase)

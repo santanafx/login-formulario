@@ -68,8 +68,6 @@
     background: var(--cinza-gradiente);
     border-radius: 10%;
     margin: 0 10px;
-    cursor: pointer;
-
 }
 
 .navBarUsuarioFoto span {
