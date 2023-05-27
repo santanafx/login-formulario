@@ -30,6 +30,9 @@ export const Cadastro = () => {
             usuario: cadastroUsuario,
             senha: cadastroSenha,
             profile: imgDefault,
+            localidade: '',
+            descricao: '',
+            nome: '',
         }
 
         if (cadastroSenha.length < 6) {

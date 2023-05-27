@@ -15,12 +15,6 @@ export const Login = () => {
     const [usuarioNaoCadastrado, setUsuarioNaoCadastrado] = React.useState('');
     const [validaEmail, setValidaEmail] = React.useState(false);
 
-    // React.useEffect(() => {
-    //     dataBase.forEach((element) => {
-    //         console.log(element)
-    //     })
-    // }, [])
-
     const fazerLogin = () => {
 
         if (senha.length < 6) {

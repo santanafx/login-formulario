@@ -19,7 +19,6 @@ export const Usuario = () => {
 
     React.useEffect(() => {
 
-        // console.log(usuarioLogado)
         dataBase.forEach((element) => {
             if (element.id === usuarioLogado.id) {
                 setImgProfile(element.profile)
@@ -30,28 +29,16 @@ export const Usuario = () => {
 
     const salvar = () => {
 
-
         const atualizacaoUsuario = {
             id: usuarioLogado.id,
             profile: imgProfile,
             senha: usuarioLogado.senha,
             usuario: usuarioLogado.usuario,
+            localidade: usuarioLogado.localidade,
+            descricao: usuarioLogado.descricao,
+            nome: usuarioLogado.nome,
         };
 
-        // console.log(atualizacaoUsuario)
-
-        // setUsuarioLogado(atualizacaoUsuario);
-
-
-        // copyData.map((element) => {
-        //     if (element.id === usuarioLogado.id) {
-        //         return element = atualizacaoUsuario;
-        //     }
-
-
-        //     dispatch('ATT_USUARIO', { newDataBase: newDataBase })
-        //     console.log(element);
-        // })
         const copyDataBase = dataBase;
 
         for (var i = 0; i < copyDataBase.length; i++) {
@@ -61,11 +48,26 @@ export const Usuario = () => {
         }
         setDataBase(copyDataBase);
         setAtualizarInformacoes(true);
+        console.log(dataBase)
 
     }
 
     const handleChangeImg = (imgFile) => {
         setImgProfile(URL.createObjectURL(imgFile));
+    }
+
+    const handleChangeNome = (event) => {
+        setNomeUsuario(event);
+
+    }
+
+    const handleChangeDescricao = (event) => {
+        setDescricaoUsuario(event);
+
+    }
+
+    const handleChangeLocalidade = (event) => {
+        setLocalUsuario(event);
     }
 
     return (
@@ -82,21 +84,27 @@ export const Usuario = () => {
 
                 <div className="usuarioPerfil">
                     <div className='usuarioPerfilContainer'>
-                        <textarea cols="25" rows="2" onBlur={(event) => { setNome(true); setNomeUsuario(event.target.value) }} id='nome' type="text" disabled={nome} />
+                        <textarea cols="25" rows="2"
+                            onBlur={(event) => { setNome(true); setNomeUsuario(event.target.value); usuarioLogado.nome = nomeUsuario; }} id='nome' type="text" disabled={nome}
+                            onChange={(event) => handleChangeNome(event.target.value)} value={nomeUsuario} />
                         <label onClick={() => setNome(false)} htmlFor='nome'><AiOutlineEdit />Defina seu nome</label>
                     </div>
 
                     <span style={{ color: 'var(--cinza)', marginLeft: '15px' }}><AiOutlineMail />{usuarioLogado.usuario}</span>
 
                     <div className='usuarioPerfilDescricaoContainer'>
-                        <textarea cols="30" rows="5" onBlur={(event) => { setDescricao(true); setDescricaoUsuario(event.target.value) }} id='descricao' type="text" disabled={descricao} />
+                        <textarea cols="30" rows="5"
+                            onBlur={(event) => { setDescricao(true); setDescricaoUsuario(event.target.value); usuarioLogado.descricao = descricaoUsuario }} id='descricao' type="text" disabled={descricao}
+                            onChange={(event) => handleChangeDescricao(event.target.value)} value={descricaoUsuario} />
                         <label onClick={() => setDescricao(false)} htmlFor='descricao'><AiOutlineEdit />Fale sobre você</label>
                     </div>
 
                     <div className='usuarioPerfilLocalContainer'>
                         <div className='usuarioPerfilLocal'>
                             <MdLocationOn />
-                            <textarea cols="28" rows="2" onBlur={(event) => { setLocal(true); setLocalUsuario(event.target.value) }} id='local' type="text" disabled={local} />
+                            <textarea cols="28" rows="2"
+                                onBlur={(event) => { setLocal(true); setLocalUsuario(event.target.value); usuarioLogado.localidade = localUsuario }} id='local' type="text" disabled={local}
+                                onChange={(event) => handleChangeLocalidade(event.target.value)} value={localUsuario} />
                         </div>
                         <label onClick={() => setLocal(false)} htmlFor='Local'><AiOutlineEdit />Digite sua localidade</label>
                     </div>
