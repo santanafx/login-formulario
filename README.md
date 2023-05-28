@@ -68,6 +68,8 @@ git clone 'cole aqui o link do projeto'
 
 ![Imagem gitbash](./src/images/instrucao-clone.png)
 
+![Imagem gitbash](./src/images/instrucao-gitClone.png)
+
 Uma pasta com o projeto desejado será adicionada a pasta em que foi escolhida.
 Clique com o botão direito em cima da pasta e selecione "Abrir com Code"
 
