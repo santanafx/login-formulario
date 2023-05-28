@@ -1,6 +1,8 @@
 import React from 'react'
 import './Inicio.css'
 import { Context } from '../context/globalContext'
+import { AiOutlineMail } from "react-icons/ai";
+import { MdLocationOn } from "react-icons/md";
 
 export const Inicio = () => {
 
@@ -17,22 +19,43 @@ export const Inicio = () => {
             setCheckUsuario(true)
         }
 
-        // if (usuarioLogado.length === undefined) {
-        //     setCheckUsuario(true);
-        // }
     }, [])
 
     return (
         <section className='inicioContainerBg'>
             <div className='inicioContainer'>
-                {/* {usuarioLogado.id !== '' ? setCheckUsuario(true) : setCheckUsuario(false)} */}
                 {checkUsuario ?
                     <div>
-                        <img src={usuarioLogado.profile} alt="" />
-                        <h1>{usuarioLogado.nome}</h1>
-                        <h1>{usuarioLogado.usuario}</h1>
-                        <h1>{usuarioLogado.descricao}</h1>
-                        <h1>{usuarioLogado.localidade}</h1>
+                        <h1 style={{ marginBottom: '20px' }}>Olá, {usuarioLogado.nome}</h1>
+                        <hr />
+                        <div className='inicioFotoImg'>
+                            <img src={usuarioLogado.profile} alt="" />
+                        </div>
+                        <hr />
+                        <div className='inicioEmail'>
+                            <AiOutlineMail />
+                            <h1>{usuarioLogado.usuario}</h1>
+                        </div>
+                        <div className='inicioDescricaoTitulo'>
+                            <h1>Descrição:</h1>
+                        </div>
+                        <hr />
+                        <div className='inicioDescricao'>
+                            <h3>{usuarioLogado.descricao}</h3>
+                        </div>
+                        <hr />
+                        <div className='inicioLocalidade'>
+                            <MdLocationOn />
+                            <h1>{usuarioLogado.localidade}</h1>
+                        </div>
+                        <hr />
+                        <div className='inicioHistoriaTitulo'>
+                            <h1>História:</h1>
+                        </div>
+                        <hr />
+                        <div className='inicioHistoria'>
+                            <h3>{usuarioLogado.historia}</h3>
+                        </div>
                     </div>
                     :
                     <div>

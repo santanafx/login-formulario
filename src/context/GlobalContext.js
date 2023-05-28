@@ -35,6 +35,7 @@ export const ContextProvider = ({ children }) => {
         localidade: '',
         descricao: '',
         nome: '',
+        historia: '',
     }]);
 
     return (

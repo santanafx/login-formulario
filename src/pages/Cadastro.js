@@ -32,6 +32,7 @@ export const Cadastro = () => {
             localidade: '',
             descricao: '',
             nome: '',
+            historia: '',
         }
 
         if (cadastroSenha.length < 6) {

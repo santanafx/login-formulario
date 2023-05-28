@@ -17,3 +17,85 @@
     margin-top: 100px;
     margin-bottom: 100px;
 }
+
+.inicioFotoImg {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    width: 100%;
+}
+
+.inicioFotoImg img {
+    max-width: 150px;
+    border: 3px solid transparent;
+    outline: var(--branco) solid 1px;
+    background: var(--cinza-gradiente);
+    border-radius: 10%;
+
+}
+
+.inicioEmail {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.inicioEmail svg {
+    margin-right: 5px;
+}
+
+.inicioDescricaoTitulo {
+    display: flex;
+    align-items: center;
+
+}
+
+.inicioDescricao {
+    max-width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.inicioDescricao h3 {
+    max-width: 400px;
+    border: 3px solid transparent;
+    outline: var(--preto) solid 1px;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+.inicioLocalidade {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.inicioLocalidade svg {
+    margin-right: 5px;
+}
+
+.inicioHistoriaTitulo {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.inicioHistoria {
+    max-width: 100%;
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+}
+
+.inicioHistoria h3 {
+    max-width: 600px;
+    border: 3px solid transparent;
+    outline: var(--preto) solid 1px;
+    border-radius: 5px;
+    padding: 10px;
+}

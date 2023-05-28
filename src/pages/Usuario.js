@@ -5,6 +5,7 @@ import { AiOutlineEdit, AiOutlineMail } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 
 
+
 export const Usuario = () => {
 
     const { usuarioLogado, dataBase, setDataBase, setAtualizarInformacoes, setUsuarioLogado } = useContext(Context)
@@ -15,6 +16,8 @@ export const Usuario = () => {
     const [descricao, setDescricao] = React.useState(true);
     const [local, setLocal] = React.useState(true);
     const [localUsuario, setLocalUsuario] = React.useState('');
+    const [historiaUsuario, setHistoriaUsuario] = React.useState('');
+    const [historia, setHistoria] = React.useState(true);
 
     React.useEffect(() => {
 
@@ -36,6 +39,7 @@ export const Usuario = () => {
             localidade: usuarioLogado.localidade,
             descricao: usuarioLogado.descricao,
             nome: usuarioLogado.nome,
+            historia: usuarioLogado.historia,
         };
 
         const copyDataBase = dataBase;
@@ -68,6 +72,10 @@ export const Usuario = () => {
 
     const handleChangeLocalidade = (event) => {
         setLocalUsuario(event);
+    }
+
+    const handleChangeHistoria = (event) => {
+        setHistoriaUsuario(event);
     }
 
     return (
@@ -106,13 +114,21 @@ export const Usuario = () => {
                                 onBlur={(event) => { setLocal(true); setLocalUsuario(event.target.value); usuarioLogado.localidade = localUsuario }} id='local' type="text" disabled={local}
                                 onChange={(event) => handleChangeLocalidade(event.target.value)} value={localUsuario} />
                         </div>
-                        <label onClick={() => setLocal(false)} htmlFor='Local'><AiOutlineEdit />Digite sua localidade</label>
+                        <label onClick={() => setLocal(false)} htmlFor='local'><AiOutlineEdit />Digite sua localidade</label>
                     </div>
 
                 </div>
 
-                <div className='usuarioPosts'>
-                    <h1>Conte sobre sua história.</h1>
+                <div className='usuarioHistoria'>
+                    <div className='usuarioHistoriaContainer'>
+                        <h1>Conte sua história:</h1>
+                        <div className='usuarioHistoriaText'>
+                            <textarea cols="125" rows="20"
+                                onBlur={(event) => { setHistoria(true); setHistoriaUsuario(event.target.value); usuarioLogado.historia = historiaUsuario }} id='historia' type="text" disabled={historia}
+                                onChange={(event) => handleChangeHistoria(event.target.value)} value={historiaUsuario} />
+                        </div>
+                        <label onClick={() => setHistoria(false)} htmlFor='historia'><AiOutlineEdit />Digite sua historia</label>
+                    </div>
                 </div>
 
                 <div className='usuarioBotao'>

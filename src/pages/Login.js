@@ -17,16 +17,6 @@ export const Login = () => {
 
     const fazerLogin = () => {
 
-        const atualizacaoUsuario = {
-            id: usuarioLogado.id,
-            profile: '',
-            senha: usuarioLogado.senha,
-            usuario: usuarioLogado.usuario,
-            localidade: usuarioLogado.localidade,
-            descricao: usuarioLogado.descricao,
-            nome: usuarioLogado.nome,
-        };
-
         if (senha.length < 6) {
             setSenhaComprimentoMinimoInvalido(true);
         }
