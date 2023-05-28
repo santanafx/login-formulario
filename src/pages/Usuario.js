@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Context } from '../context/globalContext'
+import { Context } from '../context/GlobalContext'
 import './Usuario.css'
 import { AiOutlineEdit, AiOutlineMail } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";

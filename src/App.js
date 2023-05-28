@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Login } from './pages/Login';
 import { Cadastro } from './pages/Cadastro';
-import { Context } from './context/globalContext';
+import { Context } from './context/GlobalContext';
 import { Usuario } from './pages/Usuario';
 import { NotFound } from './pages/NotFound';
 import { NavBar } from './components/NavBar';

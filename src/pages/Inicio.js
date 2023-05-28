@@ -1,6 +1,6 @@
 import React from 'react'
 import './Inicio.css'
-import { Context } from '../context/globalContext'
+import { Context } from '../context/GlobalContext'
 import { AiOutlineMail } from "react-icons/ai";
 import { MdLocationOn } from "react-icons/md";
 

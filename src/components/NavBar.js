@@ -4,7 +4,7 @@ import './NavBar.css'
 import { MdHome, MdArticle, MdLogout } from "react-icons/md";
 import { BsGearFill } from "react-icons/bs";
 import { HiUser } from "react-icons/hi";
-import { Context } from '../context/globalContext';
+import { Context } from '../context/GlobalContext';
 import imgDefault from '../images/profile-img-default.png'
 
 

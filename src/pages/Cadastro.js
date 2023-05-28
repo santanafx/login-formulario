@@ -1,6 +1,6 @@
 import React from 'react'
 import './Cadastro.css'
-import { Context } from '../context/globalContext';
+import { Context } from '../context/GlobalContext';
 import imgDefault from '../images/profile-img-default.png'
 
 export const Cadastro = () => {

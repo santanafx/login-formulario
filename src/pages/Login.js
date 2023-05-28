@@ -1,6 +1,6 @@
 import React from 'react'
 import './Login.css'
-import { Context } from '../context/globalContext';
+import { Context } from '../context/GlobalContext';
 import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
