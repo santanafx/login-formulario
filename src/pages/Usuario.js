@@ -123,7 +123,7 @@ export const Usuario = () => {
                     <div className='usuarioHistoriaContainer'>
                         <h1>Conte sua história:</h1>
                         <div className='usuarioHistoriaText'>
-                            <textarea cols="125" rows="20"
+                            <textarea cols="55" rows="20"
                                 onBlur={(event) => { setHistoria(true); setHistoriaUsuario(event.target.value); usuarioLogado.historia = historiaUsuario }} id='historia' type="text" disabled={historia}
                                 onChange={(event) => handleChangeHistoria(event.target.value)} value={historiaUsuario} />
                         </div>

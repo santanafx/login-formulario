@@ -25,7 +25,7 @@ export const Inicio = () => {
         <section className='inicioContainerBg'>
             <div className='inicioContainer'>
                 {checkUsuario ?
-                    <div>
+                    <div className="inicioContainerCheckUsuario">
                         <h1 style={{ marginBottom: '20px' }}>Olá, {usuarioLogado.nome}</h1>
                         <hr />
                         <div className='inicioFotoImg'>
