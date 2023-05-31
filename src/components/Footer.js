@@ -13,7 +13,7 @@ export const Footer = () => {
                     <Link to='https://wa.me/5531997915854'><BsWhatsapp className='wp' /></Link>
                     <Link to='https://github.com/santanafx'><BsGithub className='gh' /></Link>
                     <Link to='https://discordapp.com/users/254746660549296128'><BsDiscord className='dis' /></Link>
-                    <Link to='https://www.linkedin.com/in/lucas-santana-figueiredo-907436115/'><BsLinkedin className='lin' /></Link>
+                    <Link to='https://www.linkedin.com/in/lucas-santana-figueiredo/'><BsLinkedin className='lin' /></Link>
                 </div>
                 <small className='footerAutor'>&copy; Copyright 2023, Lucas Santana Figueiredo</small>
             </footer>
